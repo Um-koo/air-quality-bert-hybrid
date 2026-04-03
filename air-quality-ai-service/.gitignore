@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Docker & Logs
+logs/*.log
+.dockerignore
+
+# ML Models & Data (용량이 커서 제외하거나 가이드만 제공)
+app/models/fine_tuned_bert/
+results/
+checkpoint/
+
+# OS
+.DS_Store
+Thumbs.db

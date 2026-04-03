@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  air-bert-service:
+    build: .
+    container_name: air-bert-service
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - WATCHFILES_FORCE_POLLING=true
+    # GPU 사용을 위한 핵심 설정 추가
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
